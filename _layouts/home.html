@@ -57,7 +57,7 @@ title: "Home"
                   <h5 class="card-title mbr-fonts-style display-5"><strong>{{ post.title }}</strong></h5>
                   <p class="card-text mbr-fonts-style display-7">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
                   <div class="mbr-section-btn">
-                    <a href="{{ site.base_url }}/{{ post.url | relative_url }}" class="btn btn-primary display-7">Xem chi tiết</a>
+                    <a href="{{ site.baseurl }}{{ post.url | relative_url }}" class="btn btn-primary display-7">Xem chi tiết</a>
                   </div>
                 </div>
               </div>
