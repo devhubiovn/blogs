@@ -3,7 +3,10 @@ layout: post
 title: "Hướng dẫn sử dụng API đăng bài Devhub Blog"
 date: 2024-10-31
 image: "mbr-1683x1122.jpg"
+author: "Ngọc Thành Đoàn" # Tên tác giả
+description: "Hướng dẫn chi tiết cách sử dụng GitHub API để tạo và đăng bài viết mới vào repository Jekyll bằng script." # Mô tả ngắn cho SEO
 ---
+
 
 # Hướng dẫn sử dụng GitHub API để tạo bài viết mới trong repository
 
