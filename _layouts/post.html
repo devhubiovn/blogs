@@ -24,13 +24,13 @@ layout: default
       <div class="col-12">
         {% if page.image %}
           <div class="image-wrapper mb-4">
-            <img src="{{ site.base_url }}/assets/images/{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid">
+            <img src="{{ site.base_url }}/assets/images/{{ page.image }}" alt="{{ page.title }}" class="img-fluid">
           </div>
         {% endif %}
         <div class="article-content mbr-fonts-style display-7">
           {{ content }}
         </div>
-        <a href="{{ '/' | relative_url }}" class="btn btn-secondary mt-4">Back to Home</a>
+        <a href="{{ site.base_url }}/" class="btn btn-secondary mt-4">Back to Home</a>
       </div>
     </div>
   </div>
