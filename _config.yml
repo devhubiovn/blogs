@@ -1,4 +1,5 @@
 title: "Devhub Việt Nam"
+image: "/assets/images/mbr-1683x1122.jpg"
 description: "Tin tức công nghệ, landing page và tài liệu hướng dẫn"
 baseurl: "/blogs"  # Để trống nếu đây là trang cá nhân
 url: "https://devhub.github.io"  # URL của trang GitHub Pages
