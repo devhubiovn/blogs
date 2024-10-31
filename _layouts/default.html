@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: "Trang Chủ" }}</title>
+  <link rel="stylesheet" href="{{ "/assets/bootstrap/css/bootstrap.min.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/theme/css/style.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/web/assets/mobirise-icons2/mobirise2.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/bootstrap/css/bootstrap-grid.min.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/bootstrap/css/bootstrap-reboot.min.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/animatecss/animate.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/dropdown/css/style.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/socicon/css/styles.css" | relative_url }}">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Manrope:200,300,400,500,600,700,800&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope:200,300,400,500,600,700,800&amp;display=swap">
+  </noscript>
+  <link rel="preload" href="{{ "/assets/mobirise/css/mbr-additional2b69.css" | relative_url }}" as="style">
+  <link rel="stylesheet" href="{{ "/assets/mobirise/css/mbr-additional2b69.css" | relative_url }}" type="text/css">
+  
+</head>
+<body>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+  <script src="{{ "/assets/bootstrap/js/bootstrap.bundle.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/smoothscroll/smooth-scroll.js" | relative_url }}"></script>
+  <script src="{{ "/assets/ytplayer/index.js" | relative_url }}"></script>
+  <script src="{{ "/assets/dropdown/js/navbar-dropdown.js" | relative_url }}"></script>
+  <script src="{{ "/assets/embla/embla.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/embla/script.js" | relative_url }}"></script>
+  <script src="{{ "/assets/playervimeo/vimeo_player.js" | relative_url }}"></script>
+  <script src="{{ "/assets/theme/js/script.js" | relative_url }}"></script>
+  
+</body>
+</html>

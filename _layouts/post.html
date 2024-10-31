@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<section class="header1 cid-t5xj9RAhxf mbr-fullscreen" id="blog-post-header">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12">
+        <div class="card-wrapper">
+          <div class="card-box">
+            <h1 class="card-title mbr-fonts-style display-1"><strong>{{ page.title }}</strong></h1>
+            <p class="mbr-text mbr-fonts-style display-4 text-muted">Published on {{ page.date | date: "%B %-d, %Y" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Article content section -->
+<section class="article-section cid-t5xles1H4N" id="blog-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {% if page.image %}
+          <div class="image-wrapper mb-4">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid">
+          </div>
+        {% endif %}
+        <div class="article-content mbr-fonts-style display-7">
+          {{ content }}
+        </div>
+        <a href="{{ '/' | relative_url }}" class="btn btn-secondary mt-4">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>

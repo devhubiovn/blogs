@@ -1,0 +1,9 @@
+title: "Devhub Việt Nam"
+description: "Tin tức công nghệ, landing page và tài liệu hướng dẫn"
+baseurl: ""  # Để trống nếu đây là trang cá nhân
+url: "https://devhub.github.io"  # URL của trang GitHub Pages
+theme: minima
+paginate: 5  # Hiển thị 5 bài viết trên mỗi trang
+paginate_path: "/page/:num/"
+plugins:
+  - jekyll-paginate
