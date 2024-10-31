@@ -128,14 +128,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Lớp phủ để làm nổi bật văn bản */
+    background: rgba(0, 0, 0, 0.4);
+    /* Lớp phủ để làm nổi bật văn bản */
     z-index: 1;
   }
 
   .header1 .card-title,
   .header1 .mbr-text {
     position: relative;
-    z-index: 2; /* Hiển thị văn bản trên lớp phủ */
+    z-index: 2;
+    /* Hiển thị văn bản trên lớp phủ */
   }
 
   .header1 .card-title {
@@ -156,6 +158,7 @@
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -246,8 +249,9 @@
       <div class="col-12">
         <div class="card-wrapper">
           <div class="card-box">
-            <h1 class="card-title mbr-fonts-style display-1"><strong>Xu hướng thiết kế Landing Page năm 2024</strong></h1>
-            <p class="mbr-text mbr-fonts-style display-4 text-muted">Published on October 31, 2024</p>
+            <h1 class="card-title mbr-fonts-style display-1" style="color: #f8f8f2;"><strong>Xu hướng thiết kế Landing Page năm 2024</strong>
+            </h1>
+            <p class="mbr-text mbr-fonts-style display-4 text-muted" style="color: #f8f8f2;">Published on October 31, 2024</p>
           </div>
         </div>
       </div>
@@ -299,7 +303,7 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Thêm nút copy cho tất cả thẻ code
     document.querySelectorAll('pre').forEach(pre => {
       const copyButton = document.createElement('button');
@@ -322,8 +326,23 @@
       y: -50,
       duration: 1,
       ease: "power2.out",
-      delay: 0.3
+      delay: 0.3,
+      onComplete: function () {
+        gsap.set(".header1 .card-title", { clearProps: "all" }); // Đảm bảo các thuộc tính được reset để giữ nguyên trạng thái
+      }
     });
+
+    gsap.from(".header1 .mbr-text", {
+      opacity: 0,
+      y: -20,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+      onComplete: function () {
+        gsap.set(".header1 .mbr-text", { clearProps: "all" }); // Reset lại các thuộc tính sau animation
+      }
+    });
+
 
     gsap.from(".header1 .mbr-text", {
       opacity: 0,
@@ -368,7 +387,6 @@
     });
   });
 </script>
-
 
   <section data-bs-version="5.1" class="footer1 cid-t5xt6gUymi" once="footers" id="afooter1-e">
     <div class="container">

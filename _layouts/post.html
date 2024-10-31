@@ -35,14 +35,16 @@ layout: default
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Lớp phủ để làm nổi bật văn bản */
+    background: rgba(0, 0, 0, 0.4);
+    /* Lớp phủ để làm nổi bật văn bản */
     z-index: 1;
   }
 
   .header1 .card-title,
   .header1 .mbr-text {
     position: relative;
-    z-index: 2; /* Hiển thị văn bản trên lớp phủ */
+    z-index: 2;
+    /* Hiển thị văn bản trên lớp phủ */
   }
 
   .header1 .card-title {
@@ -63,6 +65,7 @@ layout: default
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -153,8 +156,10 @@ layout: default
       <div class="col-12">
         <div class="card-wrapper">
           <div class="card-box">
-            <h1 class="card-title mbr-fonts-style display-1"><strong>{{ page.title }}</strong></h1>
-            <p class="mbr-text mbr-fonts-style display-4 text-muted">Published on {{ page.date | date: "%B %-d, %Y" }}</p>
+            <h1 class="card-title mbr-fonts-style display-1" style="color: #f8f8f2;"><strong>{{ page.title }}</strong>
+            </h1>
+            <p class="mbr-text mbr-fonts-style display-4 text-muted" style="color: #f8f8f2;">Published on {{ page.date |
+              date: "%B %-d, %Y" }}</p>
           </div>
         </div>
       </div>
@@ -182,7 +187,7 @@ layout: default
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Thêm nút copy cho tất cả thẻ code
     document.querySelectorAll('pre').forEach(pre => {
       const copyButton = document.createElement('button');
@@ -205,8 +210,23 @@ layout: default
       y: -50,
       duration: 1,
       ease: "power2.out",
-      delay: 0.3
+      delay: 0.3,
+      onComplete: function () {
+        gsap.set(".header1 .card-title", { clearProps: "all" }); // Đảm bảo các thuộc tính được reset để giữ nguyên trạng thái
+      }
     });
+
+    gsap.from(".header1 .mbr-text", {
+      opacity: 0,
+      y: -20,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+      onComplete: function () {
+        gsap.set(".header1 .mbr-text", { clearProps: "all" }); // Reset lại các thuộc tính sau animation
+      }
+    });
+
 
     gsap.from(".header1 .mbr-text", {
       opacity: 0,
