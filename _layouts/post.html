@@ -24,7 +24,7 @@ layout: default
       <div class="col-12">
         {% if page.image %}
           <div class="image-wrapper mb-4">
-            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid">
+            <img src="{{ site.base_url }}/assets/images/{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid">
           </div>
         {% endif %}
         <div class="article-content mbr-fonts-style display-7">

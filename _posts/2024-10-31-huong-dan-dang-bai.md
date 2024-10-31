@@ -2,7 +2,7 @@
 layout: post
 title: "Hướng dẫn sử dụng API đăng bài Devhub Blog"
 date: 2024-10-31
-image: "/assets/images/mbr-1683x1122.jpg"
+image: "mbr-1683x1122.jpg"
 ---
 
 # Hướng dẫn sử dụng GitHub API để tạo bài viết mới trong repository

@@ -21,7 +21,7 @@ title: "Home"
       <div class="col-12 col-lg-6 col-img">
         <div class="circle-blur"></div>
         <div class="image-wrapper">
-          <img src="{{ post.image | default: '/assets/images/pexels-mart-production-7605189-removebg-preview-442x565.png' }}" alt="Devhub Technology News" loading="lazy" class="lazyload">
+          <img src="{{ site.base_url }}/assets/images/pexels-mart-production-7605189-removebg-preview-442x565.png" alt="Devhub Technology News" loading="lazy" class="lazyload">
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@ title: "Home"
               <div class="card-box">
                 <div class="card-img">
                   <div class="img-wrap">
-                    <img src="{{ post.image | default: '/assets/images/default-thumbnail.jpg' }}" alt="{{ post.title }}" class="lazyload animate__animated animate__fadeInUp">
+                    <img src="{{ site.base_url}}/assets/images/{{post.image}}" alt="{{ post.title }}" class="lazyload animate__animated animate__fadeInUp">
                   </div>
                 </div>
                 <div class="card-text-container">
