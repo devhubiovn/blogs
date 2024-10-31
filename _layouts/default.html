@@ -13,7 +13,7 @@
   <!-- Open Graph (Facebook, LinkedIn) -->
   <meta property="og:title" content="{{ page.title | default: "Trang Chủ" }}">
   <meta property="og:description" content="{{ page.description | default: " Cập nhật các xu hướng mới nhất trong công nghệ và thiết kế kỹ thuật số. Từ dịch vụ phát triển website đến tối ưu SEO, Devhub giúp bạn đón đầu và phát triển hiệu quả." }}">
-  <meta property="og:image" content="{{ page.image | default: site.base_url | append: '{{ site.base_url }}/assets/images/default-og-image.jpg' }}">
+  <meta property="og:image" content="{{ page.image | default: site.base_url | append: '/assets/images/default-og-image.jpg' }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:type" content="website">
 
@@ -21,7 +21,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title | default: "Trang Chủ" }}">
   <meta name="twitter:description" content="{{ page.description | default: " Cập nhật các xu hướng mới nhất trong công nghệ và thiết kế kỹ thuật số. Từ dịch vụ phát triển website đến tối ưu SEO, Devhub giúp bạn đón đầu và phát triển hiệu quả." }}">
-  <meta name="twitter:image" content="{{ site.image | default: site.base_url | append: '{{ site.base_url }}/assets/images/mbr-1683x1122.jpg' }}">
+  <meta name="twitter:image" content="{{ page.image | default: site.base_url | append: '/assets/images/default-og-image.jpg' }}">
 
   <!-- Đường dẫn với base_url -->
   <link rel="stylesheet" href="{{ site.base_url }}/assets/bootstrap/css/bootstrap.min.css">
