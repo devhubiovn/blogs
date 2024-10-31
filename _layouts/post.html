@@ -1,7 +1,82 @@
 ---
 layout: default
 ---
+<style>
+  /* Toàn bộ trang */
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
 
+#blog-content {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+/* Phần tiêu đề bài viết */
+.header1 {
+  background-color: #d8f3dc;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.header1 .card-title {
+  font-size: 3rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.header1 .mbr-text {
+  color: #555;
+}
+
+/* Phần nội dung bài viết */
+.article-section {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-section .article-content {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.article-section h1,
+.article-section h2,
+.article-section h3 {
+  color: #2a9d8f;
+}
+
+.article-section p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.image-wrapper img {
+  border-radius: 10px;
+  max-width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Nút "Back to Home" */
+.btn-secondary {
+  background-color: #264653;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #2a9d8f;
+  color: #fff;
+}
+
+</style>
 <section class="header1 cid-t5xj9RAhxf mbr-fullscreen" id="blog-post-header">
   <div class="container">
     <div class="row align-items-center">
@@ -27,7 +102,7 @@ layout: default
             <img src="{{ site.base_url }}/assets/images/{{ page.image }}" alt="{{ page.title }}" class="img-fluid">
           </div>
         {% endif %}
-        <div class="article-content mbr-fonts-style display-7" style="color: white;">
+        <div class="article-content mbr-fonts-style display-7">
           {{ content }}
         </div>
         <a href="{{ site.base_url }}/" class="btn btn-secondary mt-4">Back to Home</a>
@@ -35,3 +110,63 @@ layout: default
     </div>
   </div>
 </section>
+// Thêm thư viện GSAP
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+// Thêm animation cho các phần tử khi người dùng cuộn xuống
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Animation cho tiêu đề
+    gsap.from(".header1 .card-title", {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.3
+    });
+
+    gsap.from(".header1 .mbr-text", {
+      opacity: 0,
+      y: -20,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5
+    });
+
+    // Animation cho ảnh và nội dung bài viết
+    gsap.from(".image-wrapper", {
+      scrollTrigger: {
+        trigger: ".image-wrapper",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      },
+      opacity: 0,
+      scale: 0.9,
+      duration: 1
+    });
+
+    gsap.from(".article-content p, .article-content h2, .article-content h3", {
+      scrollTrigger: {
+        trigger: ".article-content",
+        start: "top 90%",
+        toggleActions: "play none none none"
+      },
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      stagger: 0.3
+    });
+
+    // Animation cho nút "Back to Home"
+    gsap.from(".btn-secondary", {
+      scrollTrigger: {
+        trigger: ".btn-secondary",
+        start: "top 90%",
+        toggleActions: "play none none none"
+      },
+      opacity: 0,
+      y: 20,
+      duration: 1
+    });
+  });
+</script>
