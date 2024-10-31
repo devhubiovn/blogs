@@ -96,80 +96,124 @@
   <!-- Nội dung -->
   <style>
   /* Toàn bộ trang */
-body {
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
+  body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
 
-#blog-content {
-  padding-top: 30px;
-  padding-bottom: 60px;
-}
+  #blog-content {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
 
-/* Phần tiêu đề bài viết */
-.header1 {
-  background-color: #d8f3dc;
-  text-align: center;
-  padding: 50px 0;
-}
+  /* Phần tiêu đề bài viết */
+  .header1 {
+    position: relative;
+    background-image: url('/blogs/assets/images/mbr-1683x1122.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+  }
 
-.header1 .card-title {
-  font-size: 3rem;
-  color: #333;
-  font-weight: bold;
-}
+  .header1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Lớp phủ làm rõ chữ */
+    z-index: 1;
+  }
 
-.header1 .mbr-text {
-  color: #555;
-}
+  .header1 .card-title,
+  .header1 .mbr-text {
+    position: relative;
+    z-index: 2; /* Hiển thị văn bản trên lớp phủ */
+  }
 
-/* Phần nội dung bài viết */
-.article-section {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+  /* Phần nội dung bài viết */
+  .article-section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
 
-.article-section .article-content {
-  font-size: 1.1rem;
-  color: #444;
-}
+  .article-section .article-content {
+    font-size: 1.1rem;
+    color: #444;
+  }
 
-.article-section h1,
-.article-section h2,
-.article-section h3 {
-  color: #2a9d8f;
-}
+  .article-section h1,
+  .article-section h2,
+  .article-section h3 {
+    color: #2a9d8f;
+  }
 
-.article-section p {
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-}
+  .article-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
 
-.image-wrapper img {
-  border-radius: 10px;
-  max-width: 100%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+  .image-wrapper img {
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
-/* Nút "Back to Home" */
-.btn-secondary {
-  background-color: #264653;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-}
+  /* Định dạng cho thẻ code */
+  pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    position: relative;
+  }
 
-.btn-secondary:hover {
-  background-color: #2a9d8f;
-  color: #fff;
-}
+  pre code {
+    font-family: 'Source Code Pro', monospace;
+    display: block;
+  }
 
+  /* Nút copy */
+  .copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .copy-btn:hover {
+    background-color: #555;
+  }
+
+  /* Nút "Back to Home" */
+  .btn-secondary {
+    background-color: #264653;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: #2a9d8f;
+    color: #fff;
+  }
 </style>
+
 <section class="header1 cid-t5xj9RAhxf mbr-fullscreen" id="blog-post-header">
   <div class="container">
     <div class="row align-items-center">
@@ -241,9 +285,26 @@ https://api.github.com/repos/username/your-repo/contents/_posts/2024-10-25-your-
     </div>
   </div>
 </section>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Animation cho tiêu đề
+  document.addEventListener('DOMContentLoaded', function() {
+    // Thêm nút copy cho tất cả thẻ code
+    document.querySelectorAll('pre').forEach(pre => {
+      const copyButton = document.createElement('button');
+      copyButton.innerText = 'Copy';
+      copyButton.classList.add('copy-btn');
+      pre.appendChild(copyButton);
+
+      copyButton.addEventListener('click', () => {
+        const code = pre.querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          copyButton.innerText = 'Copied!';
+          setTimeout(() => (copyButton.innerText = 'Copy'), 2000);
+        });
+      });
+    });
+
+    // Animation GSAP cho tiêu đề và nội dung
     gsap.from(".header1 .card-title", {
       opacity: 0,
       y: -50,
@@ -260,7 +321,6 @@ https://api.github.com/repos/username/your-repo/contents/_posts/2024-10-25-your-
       delay: 0.5
     });
 
-    // Animation cho ảnh và nội dung bài viết
     gsap.from(".image-wrapper", {
       scrollTrigger: {
         trigger: ".image-wrapper",
@@ -284,7 +344,6 @@ https://api.github.com/repos/username/your-repo/contents/_posts/2024-10-25-your-
       stagger: 0.3
     });
 
-    // Animation cho nút "Back to Home"
     gsap.from(".btn-secondary", {
       scrollTrigger: {
         trigger: ".btn-secondary",
