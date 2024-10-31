@@ -43,3 +43,5 @@ https://api.github.com/repos/username/your-repo/contents/_posts/2024-10-25-your-
   "content": "'"$(echo -n '# Tiêu đề bài viết\n\nNội dung của bài viết' | base64)"'"
 }'
 ```
+### Thêm thử 1 hình
+![alt text](screenshot-mobile.png)
