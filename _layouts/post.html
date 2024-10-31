@@ -42,6 +42,7 @@ layout: default
 
   .header1 .card-title,
   .header1 .mbr-text {
+    color:  #f8f8f2;
     position: relative;
     z-index: 2;
     /* Hiển thị văn bản trên lớp phủ */
@@ -50,14 +51,14 @@ layout: default
   .header1 .card-title {
     font-size: 3.5rem;
     font-weight: bold;
-    animation: fadeInUp 1s ease-out;
+    animation: fadeInUp 2s ease-out;
   }
 
   .header1 .mbr-text {
     font-size: 1.2rem;
-    color: #e0e0e0;
+    color:  #f8f8f2;
     margin-top: 10px;
-    animation: fadeInUp 1s ease-out 0.5s;
+    animation: fadeInUp 2s ease-out 0.5s;
   }
 
   @keyframes fadeInUp {
@@ -156,9 +157,9 @@ layout: default
       <div class="col-12">
         <div class="card-wrapper">
           <div class="card-box">
-            <h1 class="card-title mbr-fonts-style display-1" style="color: #f8f8f2;"><strong>{{ page.title }}</strong>
+            <h1 class="card-title mbr-fonts-style display-1"><strong>{{ page.title }}</strong>
             </h1>
-            <p class="mbr-text mbr-fonts-style display-4 text-muted" style="color: #f8f8f2;">Published on {{ page.date |
+            <p class="mbr-text mbr-fonts-style display-4 text-muted" >Published on {{ page.date |
               date: "%B %-d, %Y" }}</p>
           </div>
         </div>
@@ -205,37 +206,7 @@ layout: default
     });
 
     // Animation GSAP cho tiêu đề và nội dung
-    gsap.from(".header1 .card-title", {
-      opacity: 0,
-      y: -50,
-      duration: 1,
-      ease: "power2.out",
-      delay: 0.3,
-      onComplete: function () {
-        gsap.set(".header1 .card-title", { clearProps: "all" }); // Đảm bảo các thuộc tính được reset để giữ nguyên trạng thái
-      }
-    });
-
-    gsap.from(".header1 .mbr-text", {
-      opacity: 0,
-      y: -20,
-      duration: 1,
-      ease: "power2.out",
-      delay: 0.5,
-      onComplete: function () {
-        gsap.set(".header1 .mbr-text", { clearProps: "all" }); // Reset lại các thuộc tính sau animation
-      }
-    });
-
-
-    gsap.from(".header1 .mbr-text", {
-      opacity: 0,
-      y: -20,
-      duration: 1,
-      ease: "power2.out",
-      delay: 0.5
-    });
-
+    
     gsap.from(".image-wrapper", {
       scrollTrigger: {
         trigger: ".image-wrapper",
