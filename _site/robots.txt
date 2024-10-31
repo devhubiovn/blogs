@@ -1,0 +1,6 @@
+# Cho phép tất cả các trình thu thập truy cập toàn bộ trang
+User-agent: *
+Disallow:
+
+# Chỉ mục trang web của bạn
+Sitemap: {{ site.base_url }}/sitemap.xml

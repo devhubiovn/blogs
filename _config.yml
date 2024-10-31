@@ -6,8 +6,7 @@ url: "https://devhub.github.io"  # URL của trang GitHub Pages
 theme: minima
 paginate: 5  # Hiển thị 5 bài viết trên mỗi trang
 paginate_path: "/page/:num/"
-plugins:
-  - jekyll-paginate
 base_url: "/blogs" # Thay bằng tên repository GitHub của bạn, ví dụ "/devhub-blog"
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate
