@@ -25,6 +25,7 @@ layout: default
     text-align: center;
     padding: 100px 0;
     color: #fff;
+    overflow: hidden;
   }
 
   .header1::before {
@@ -34,7 +35,7 @@ layout: default
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Lớp phủ làm rõ chữ */
+    background: rgba(0, 0, 0, 0.4); /* Lớp phủ để làm nổi bật văn bản */
     z-index: 1;
   }
 
@@ -42,6 +43,30 @@ layout: default
   .header1 .mbr-text {
     position: relative;
     z-index: 2; /* Hiển thị văn bản trên lớp phủ */
+  }
+
+  .header1 .card-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .header1 .mbr-text {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease-out 0.5s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Phần nội dung bài viết */
@@ -71,6 +96,7 @@ layout: default
   .image-wrapper img {
     border-radius: 10px;
     max-width: 100%;
+    height: auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   }
 
@@ -141,11 +167,11 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-12">
-        {% if page.image %}
+        <!-- {% if page.image %}
           <div class="image-wrapper mb-4">
             <img src="{{ site.base_url }}/assets/images/{{ page.image }}" alt="{{ page.title }}" class="img-fluid">
           </div>
-        {% endif %}
+        {% endif %} -->
         <div class="article-content mbr-fonts-style display-7">
           {{ content }}
         </div>

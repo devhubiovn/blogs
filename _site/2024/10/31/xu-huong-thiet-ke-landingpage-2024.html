@@ -118,6 +118,7 @@
     text-align: center;
     padding: 100px 0;
     color: #fff;
+    overflow: hidden;
   }
 
   .header1::before {
@@ -127,7 +128,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Lớp phủ làm rõ chữ */
+    background: rgba(0, 0, 0, 0.4); /* Lớp phủ để làm nổi bật văn bản */
     z-index: 1;
   }
 
@@ -135,6 +136,30 @@
   .header1 .mbr-text {
     position: relative;
     z-index: 2; /* Hiển thị văn bản trên lớp phủ */
+  }
+
+  .header1 .card-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .header1 .mbr-text {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease-out 0.5s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Phần nội dung bài viết */
@@ -164,6 +189,7 @@
   .image-wrapper img {
     border-radius: 10px;
     max-width: 100%;
+    height: auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   }
 
@@ -234,11 +260,11 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        
+        <!-- 
           <div class="image-wrapper mb-4">
             <img src="/blogs/assets/images/mbr-1683x1122.jpg" alt="Xu hướng thiết kế Landing Page năm 2024" class="img-fluid">
           </div>
-        
+         -->
         <div class="article-content mbr-fonts-style display-7">
           <p>Cập nhật những xu hướng hàng đầu trong thiết kế Landing Page năm 2024, giúp doanh nghiệp tăng tỉ lệ chuyển đổi, nâng cao trải nghiệm người dùng, và nổi bật giữa thị trường cạnh tranh.</p>
 
